@@ -1,7 +1,7 @@
 // assets/js/main.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderSidebar(siteData);
+  initSidebar("home", siteData);
   renderNav(siteData.sections);
   renderSections(siteData.sections);
   setupThemeToggle();

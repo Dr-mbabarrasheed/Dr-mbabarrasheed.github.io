@@ -1,7 +1,7 @@
 // assets/js/publications.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  renderSidebarFromSiteData(siteData);
+  initSidebar("publications", siteData);
   renderPublications(pubData);
   setupThemeToggle();
 });
