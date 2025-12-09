@@ -2,18 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Academic Profile</title>
+  <title>Publications – Muhammad Babar Rasheed</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <div class="layout">
-    <!-- Sidebar -->
+    <!-- Sidebar (same style as main site) -->
     <aside class="sidebar">
       <header class="sidebar-header">
-        <div class="avatar" id="avatar">
-          <!-- If you add profile.jpg, uncomment the img tag in main.js or swap this -->
-          <img src="assets/img/profile.jpg" alt="Profile photo" />
+        <div class="avatar">
+          <!-- You can replace with an <img> if you use a real photo -->
           <span id="avatarInitials">MBR</span>
         </div>
         <div class="sidebar-text">
@@ -34,22 +33,51 @@
       </section>
 
       <section class="sidebar-section">
-        <h3>Profiles &amp; CV</h3>
+        <h3>Profiles</h3>
         <ul id="profilesList"></ul>
       </section>
 
-      <nav class="nav" id="nav" aria-label="Section navigation">
-        <!-- Buttons generated from data.js -->
+      <nav class="nav" aria-label="Page navigation">
+        <a href="index.html"><button>Home</button></a>
+        <button class="active">Publications</button>
       </nav>
     </aside>
 
     <!-- Main content -->
-    <main class="content" id="content">
-      <!-- Sections generated from data.js -->
+    <main class="content">
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Publications</h2>
+          <span class="section-kicker">Full list</span>
+        </div>
+
+        <p>
+          You can also find my articles on my
+          <a href="https://scholar.google.es/citations?user=Rjj2sDMAAAAJ&hl=es" target="_blank" rel="noreferrer">
+            Google Scholar profile
+          </a>
+          and on
+          <a href="https://orcid.org/0000-0002-9911-0693" target="_blank" rel="noreferrer">
+            my ORCID
+          </a>.
+        </p>
+
+        <p class="small">
+          The PDF files linked on this page are shared in accordance with the
+          copyright policies of the journals and conferences and may differ
+          from the official published versions.
+        </p>
+      </section>
+
+      <!-- Publications list goes here -->
+      <section class="section" id="pubsSection">
+        <!-- Filled by publications.js -->
+      </section>
     </main>
   </div>
 
   <script src="assets/js/data.js"></script>
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pubs-data.js"></script>
+  <script src="assets/js/publications.js"></script>
 </body>
 </html>
