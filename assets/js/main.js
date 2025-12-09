@@ -50,15 +50,19 @@ function renderNav(sections) {
     btn.textContent = sec.navLabel;
     btn.dataset.target = sec.id;
     if (idx === 0) btn.classList.add("active");
+    btn.type = "button";
+
     btn.addEventListener("click", () => {
       const target = document.getElementById(sec.id);
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
       }
     });
+
     nav.appendChild(btn);
   });
 }
+
 
 function renderSections(sections) {
   const content = document.getElementById("content");

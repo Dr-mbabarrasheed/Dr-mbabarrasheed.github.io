@@ -4,8 +4,10 @@ function initSidebar(mode, siteData) {
   const { profile, contact, profiles } = siteData;
   const sidebar = document.getElementById("sidebar");
 
-  // Basic skeleton
+  // Basic skeleton: NAV at the top, then header, chips, etc.
   sidebar.innerHTML = `
+    <nav class="nav" id="nav" aria-label="Sidebar navigation"></nav>
+
     <header class="sidebar-header">
       <div class="avatar">
         <span id="avatarInitials"></span>
@@ -31,12 +33,23 @@ function initSidebar(mode, siteData) {
       <h3>Profiles &amp; CV</h3>
       <ul id="profilesList"></ul>
     </section>
-
-    <nav class="nav" id="nav" aria-label="Sidebar navigation"></nav>
   `;
 
-  // Fill basics
-  document.getElementById("avatarInitials").textContent = profile.initials;
+  // Avatar: photo if available, otherwise initials
+  const avatarEl = sidebar.querySelector(".avatar");
+  const initialsEl = sidebar.querySelector("#avatarInitials");
+
+  if (profile.photoUrl) {
+    const img = document.createElement("img");
+    img.src = profile.photoUrl;
+    img.alt = profile.name;
+    avatarEl.innerHTML = "";
+    avatarEl.appendChild(img);
+  } else {
+    initialsEl.textContent = profile.initials;
+  }
+
+  // Basic text
   document.getElementById("name").textContent = profile.name;
   document.getElementById("title").textContent = profile.title;
   document.getElementById("location").textContent = profile.location;
@@ -66,14 +79,22 @@ function initSidebar(mode, siteData) {
     profilesList.appendChild(li);
   });
 
-  // Nav: depends on page mode
+  // NAV content depends on page
   const nav = document.getElementById("nav");
+
   if (mode === "home") {
-    // Leave empty here; main.js will populate section nav (About, Research, etc.)
-  } else if (mode === "publications") {
-    nav.innerHTML = `
-      <a href="./"><button type="button">Home</button></a>
-      <button type="button" class="active">Publications</button>
-    `;
+    // Leave nav empty; main.js will fill section buttons (About, Research, etc.)
   }
+
+  // If HOME → leave nav empty (main.js will fill section buttons)
+    if (mode !== "home") {
+    // Convert "publications" → "Publications", "grants" → "Grants", etc.
+    const label = mode.charAt(0).toUpperCase() + mode.slice(1);
+
+    nav.innerHTML = `
+        <a href="./"><button type="button">Home</button></a>
+        <button type="button" class="active">${label}</button>
+    `;
+    }
+
 }
