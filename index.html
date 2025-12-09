@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Academic Profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <header class="sidebar-header">
+        <div class="avatar" id="avatar">
+          <!-- If you add profile.jpg, uncomment the img tag in main.js or swap this -->
+          <img src="assets/img/profile.jpg" alt="Profile photo" />
+          <span id="avatarInitials">MBR</span>
+        </div>
+        <div class="sidebar-text">
+          <div class="name" id="name"></div>
+          <div class="title" id="title"></div>
+          <div class="location" id="location"></div>
+        </div>
+        <button id="themeToggle" class="theme-toggle" type="button">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </header>
+
+      <div class="chip-row" id="keywords"></div>
+
+      <section class="sidebar-section">
+        <h3>Contact</h3>
+        <ul id="contactList"></ul>
+      </section>
+
+      <section class="sidebar-section">
+        <h3>Profiles &amp; CV</h3>
+        <ul id="profilesList"></ul>
+      </section>
+
+      <nav class="nav" id="nav" aria-label="Section navigation">
+        <!-- Buttons generated from data.js -->
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content" id="content">
+      <!-- Sections generated from data.js -->
+    </main>
+  </div>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
