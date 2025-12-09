@@ -5,35 +5,43 @@ function initSidebar(mode, siteData) {
   const sidebar = document.getElementById("sidebar");
 
   // Basic skeleton: NAV at the top, then header, chips, etc.
-  sidebar.innerHTML = `
+sidebar.innerHTML = `
+  <div class="sidebar-top">
     <nav class="nav" id="nav" aria-label="Sidebar navigation"></nav>
+    <button id="themeToggle" class="theme-toggle" type="button">
+      <span id="themeIcon">🌙</span>
+    </button>
+  </div>
 
-    <header class="sidebar-header">
+  <header class="sidebar-header">
+    <!-- Name above -->
+    <div class="name" id="name"></div>
+
+    <!-- Photo + title/location in a row -->
+    <div class="sidebar-header-row">
       <div class="avatar">
         <span id="avatarInitials"></span>
       </div>
       <div class="sidebar-text">
-        <div class="name" id="name"></div>
         <div class="title" id="title"></div>
         <div class="location" id="location"></div>
       </div>
-      <button id="themeToggle" class="theme-toggle" type="button">
-        <span id="themeIcon">🌙</span>
-      </button>
-    </header>
+    </div>
+  </header>
 
-    <div class="chip-row" id="keywords"></div>
+  <div class="chip-row" id="keywords"></div>
 
-    <section class="sidebar-section">
-      <h3>Contact</h3>
-      <ul id="contactList"></ul>
-    </section>
+  <section class="sidebar-section">
+    <h3>Contact</h3>
+    <ul id="contactList"></ul>
+  </section>
 
-    <section class="sidebar-section">
-      <h3>Profiles &amp; CV</h3>
-      <ul id="profilesList"></ul>
-    </section>
-  `;
+  <section class="sidebar-section">
+    <h3>Profiles &amp; CV</h3>
+    <ul id="profilesList"></ul>
+  </section>
+`;
+
 
   // Avatar: photo if available, otherwise initials
   const avatarEl = sidebar.querySelector(".avatar");

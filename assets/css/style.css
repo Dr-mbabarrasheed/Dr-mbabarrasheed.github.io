@@ -91,15 +91,77 @@ body.dark .sidebar {
   margin-bottom: 18px;
 }
 
+/* New wrapper: nav + theme icon in one row */
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+/* Nav inside sidebar-top: remove top border/margin here */
+.sidebar-top .nav {
+  margin-top: 0;
+  border-top: none;
+  padding-top: 0;
+  flex: 1;
+  flex-wrap: wrap;
+}
+
+/* Keep theme button small but aligned */
+.theme-toggle {
+  flex-shrink: 0;
+}
+
+/* Adjust existing .sidebar-header to be vertical */
+.sidebar-header {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+/* Row for avatar + text */
+.sidebar-header-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Make sure sidebar-text doesn’t stretch oddly */
+.sidebar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* Optional: slightly smaller spacing on very small screens */
+@media (max-width: 600px) {
+  .sidebar-top {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .sidebar-top .nav {
+    flex: 1;
+  }
+
+  .sidebar-header-row {
+    align-items: flex-start;
+  }
+}
+
+
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 68px;
+  height: 68px;
   border-radius: 999px;
   background: var(--chip-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 36px;          /* bigger initials if no photo */
+  font-size: 60px;
   font-weight: 700;
   color: var(--accent);
   overflow: hidden;
@@ -110,13 +172,6 @@ body.dark .sidebar {
   height: 100%;
   object-fit: cover;
   display: block;
-}
-@media (max-width: 600px) {
-  .avatar {
-    width: 80px;
-    height: 80px;
-    font-size: 30px;
-  }
 }
 
 .name {

@@ -56,6 +56,13 @@ function renderNav(sections) {
     if (idx === 0) btn.classList.add("active");
 
     btn.addEventListener("click", () => {
+      // 🔹 Special case: Publications goes to publications.html
+      if (sec.id === "publications") {
+        window.location.href = "publications.html";
+        return;
+      }
+
+      // 🔹 All other buttons scroll to their section on the same page
       const target = document.getElementById(sec.id);
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -65,6 +72,7 @@ function renderNav(sections) {
     nav.appendChild(btn);
   });
 }
+
 
 
 
