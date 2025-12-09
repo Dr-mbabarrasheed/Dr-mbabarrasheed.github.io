@@ -45,12 +45,15 @@ function renderSidebar(data) {
 
 function renderNav(sections) {
   const nav = document.getElementById("nav");
+  nav.innerHTML = ""; // clear, just in case
+
   sections.forEach((sec, idx) => {
     const btn = document.createElement("button");
     btn.textContent = sec.navLabel;
     btn.dataset.target = sec.id;
-    if (idx === 0) btn.classList.add("active");
     btn.type = "button";
+
+    if (idx === 0) btn.classList.add("active");
 
     btn.addEventListener("click", () => {
       const target = document.getElementById(sec.id);
@@ -62,6 +65,7 @@ function renderNav(sections) {
     nav.appendChild(btn);
   });
 }
+
 
 
 function renderSections(sections) {

@@ -92,14 +92,14 @@ body.dark .sidebar {
 }
 
 .avatar {
-  width: 68px;
-  height: 68px;
+  width: 96px;
+  height: 96px;
   border-radius: 999px;
   background: var(--chip-bg);
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
+  font-size: 36px;          /* bigger initials if no photo */
   font-weight: 700;
   color: var(--accent);
   overflow: hidden;
@@ -110,6 +110,13 @@ body.dark .sidebar {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+@media (max-width: 600px) {
+  .avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 30px;
+  }
 }
 
 .name {
