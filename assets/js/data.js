@@ -23,14 +23,14 @@ contact: [
     html: '<a href="mailto:muhammad.rasheed@uah.es">muhammad.rasheed@uah.es</a> <br> <a href="mailto:babarmeher@gmail.com">babarmeher@gmail.com</a>'
   },
   {
-    label: "Phone (ES & UK)",
+    label: "Phone (ES)",
     icon: "bi bi-telephone-fill",
-    html: "(+34) 637559770 <br> (+44) 7438656227"
+    html: "(+34) 637559770"
   },
   {
     label: "Location",
     icon: "bi bi-geo-alt-fill",
-    html: "Cheltenham, UK.<br>Alcalá de Henares, Spain."
+    html: "Alcalá de Henares, Spain."
   }
 ],
 
@@ -52,6 +52,11 @@ profiles: [
     url: "https://www.linkedin.com/in/m-rasheed-389a0534/"
   },
   {
+    name: "ResearchGate",
+    icon: "bi bi-search",
+    url: "https://www.researchgate.net/profile/Muhammad-Rasheed-9"
+  },
+  {
     name: "GitHub",
     icon: "bi bi-github",
     url: "https://github.com/Dr-mbabarrasheed"
@@ -71,7 +76,7 @@ profiles: [
       subtitle: "Profile",
       type: "text",
       paragraphs: [
-        "I am an academic, researcher, and educator specialising in electronics engineering, optimisation algorithms, and intelligent energy systems. I currently serve as Lecturer (Assistant Professor) in Engineering and Technology at the University of Gloucestershire, combining teaching, research, and student supervision at Levels 3–7.",
+        "I am an academic, researcher, and educator specialising in electronics engineering, optimisation algorithms, and intelligent energy systems.",
         "My background spans BS and MS degrees in Electrical / Electronics Engineering and a PhD in Computer Engineering (COMSATS University Islamabad), including visiting doctoral research at Dartmouth College, USA. I am a Fellow of the Higher Education Academy (FHEA) and a Senior Member of IEEE. My research addresses AI-enabled optimisation, multi-agent smart grids, the energy–water–hydrogen nexus, and blockchain-based energy trading.",
         "I have led and contributed to multi-institutional projects with more than €1.2M in funding from agencies such as Horizon 2020 MSCA, Leverhulme Trust, Spanish MICINN, King Abdulaziz University, and the Higher Education Commission of Pakistan."
       ],
@@ -92,14 +97,14 @@ profiles: [
       subtitle: "Academic & Professional",
       type: "timeline",
       items: [
-        {
-          role: "Lecturer (Assistant Professor), Engineering & Technology",
-          org: "University of Gloucestershire, UK",
-          meta: "May 2023 – Present · Full-time",
-          description:
-            "Teaching and research in machine learning, electronics, and automation; supervision of undergraduate, MSc and PhD students; curriculum design and modernisation; QR-funded research on AI / energy systems; Associate Editor (Wiley); FHEA fellowship.",
-          pills: ["Teaching & research", "ML & optimisation", "Student supervision", "Research funding"]
-        },
+        // {
+        //   role: "Lecturer (Assistant Professor), Engineering & Technology",
+        //   org: "University of Gloucestershire, UK",
+        //   meta: "May 2023 – Present · Full-time",
+        //   description:
+        //     "Teaching and research in machine learning, electronics, and automation; supervision of undergraduate, MSc and PhD students; curriculum design and modernisation; QR-funded research on AI / energy systems; Associate Editor (Wiley); FHEA fellowship.",
+        //   pills: ["Teaching & research", "ML & optimisation", "Student supervision", "Research funding"]
+        // },
         {
           role: "Marie Curie COFUND Fellow (MSCA)",
           org: "Universidad de Alcalá, Spain",
@@ -208,7 +213,7 @@ profiles: [
       subtitle: "Recent & Representative",
       type: "publications",
       intro:
-        "Below is a short selection; your full list is available in the downloadable CV and on Google Scholar.",
+  'These are selected works from my full publication list. For the complete list, visit the <a href="publications.html">Publications page</a> or check my <a href="https://scholar.google.com/citations?user=E1Mc2_4AAAAJ&hl=en&oi=sra" target="_blank">Google Scholar</a>.',
       maxItem: 4
     },
 
