@@ -5,8 +5,8 @@ const siteData = {
     initials: "MBR",
     photoUrl: "assets/img/profile.jpg",   // <-- NEW
     name: "Muhammad Babar Rasheed",
-    title: "Lecturer (Assistant Professor), Engineering & Technology,",
-    location: "University of Gloucestershire, UK",
+    title: "Researcher,",
+    location: "Spain",
     keywords: [
       
       "Energy–Water–Hydrogen Nexus",
