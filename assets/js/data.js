@@ -5,57 +5,63 @@ const siteData = {
     initials: "MBR",
     photoUrl: "assets/img/profile.jpg",   // <-- NEW
     name: "Muhammad Babar Rasheed",
-    title: "Lecturer (Assistant Professor), Engineering & Technology",
+    title: "Lecturer (Assistant Professor), Engineering & Technology,",
     location: "University of Gloucestershire, UK",
     keywords: [
-      "AI & Optimization",
-      "Smart Grids",
+      
       "Energy–Water–Hydrogen Nexus",
+      "Smart Grids",
+      "AI & Optimization",
       "Blockchain Energy Trading"
     ]
   },
 
-  contact: [
-    {
-      label: "Email",
-      html: '<a href="mailto:muhammad.rasheed@uah.es">muhammad.rasheed@uah.es</a>'
-    },
-    {
-      label: "Phone (ES)",
-      html: "(+34) 637 55 97 70"
-    },
-    {
-      label: "Location",
-      html: "Cheltenham, UK & Alcalá de Henares, Spain"
-    }
-  ],
+contact: [
+  {
+    label: "Email",
+    icon: "bi bi-envelope-fill",
+    html: '<a href="mailto:muhammad.rasheed@uah.es">muhammad.rasheed@uah.es</a> <br> <a href="mailto:babarmeher@gmail.com">babarmeher@gmail.com</a>'
+  },
+  {
+    label: "Phone (ES & UK)",
+    icon: "bi bi-telephone-fill",
+    html: "(+34) 637559770 <br> (+44) 7438656227"
+  },
+  {
+    label: "Location",
+    icon: "bi bi-geo-alt-fill",
+    html: "Cheltenham, UK.<br>Alcalá de Henares, Spain."
+  }
+],
 
-  profiles: [
-    {
-      label: "Download full CV (PDF)",
-      html: '<a href="CV.pdf" target="_blank" rel="noreferrer">📄 CV.pdf</a>'
-    },
-    {
-      label: "Google Scholar",
-      html:
-        '<a href="https://scholar.google.es/citations?user=Rjj2sDMAAAAJ&hl=es" target="_blank" rel="noreferrer">' +
-        "Scholar profile</a>"
-    },
-    {
-      label: "ORCID",
-      html:
-        '<a href="https://orcid.org/0000-0002-9911-0693" target="_blank" rel="noreferrer">' +
-        "0000-0002-9911-0693</a>"
-    },
-    {
-      label: "GitHub",
-      html: '<a href="#" target="_blank">add GitHub link</a>'
-    },
-    {
-      label: "LinkedIn",
-      html: '<a href="#" target="_blank">add LinkedIn link</a>'
-    }
-  ],
+profiles: [
+  {
+    name: "Google Scholar",
+    icon: "bi bi-mortarboard",
+    url: "https://scholar.google.com/citations?user=E1Mc2_4AAAAJ&hl=en&oi=sra"
+  },
+  {
+    name: "ORCID",
+    icon: "bi bi-patch-check-fill",
+    url: "https://orcid.org/0000-0002-9911-0693"
+  },
+ 
+  {
+    name: "LinkedIn",
+    icon: "bi bi-linkedin",
+    url: "https://www.linkedin.com/in/m-rasheed-389a0534/"
+  },
+  {
+    name: "GitHub",
+    icon: "bi bi-github",
+    url: "https://github.com/Dr-mbabarrasheed"
+  },
+  {
+    name: "CV",
+    icon: "bi bi-file-earmark-person-fill",
+    url: "Babar_CV.pdf"
+  }
+],
 
   sections: [
     {
@@ -76,28 +82,6 @@ const siteData = {
         "~2200+ citations",
         "UK Global Talent Visa",
         "Marie Curie COFUND Fellow"
-      ]
-    },
-
-    {
-      id: "research",
-      navLabel: "Research",
-      title: "Research",
-      subtitle: "Interests & Highlights",
-      type: "text",
-      paragraphs: [
-        "My research focuses on data-driven and optimisation-based methods for sustainable energy and intelligent infrastructure. I work across demand response, load forecasting, electric vehicles, and integrated energy–water–hydrogen planning, often using machine learning, metaheuristics, and multi-agent systems.",
-        "I collaborate with partners in the UK, Spain, Saudi Arabia, China, the USA, and Pakistan, including Durham, Lancaster, Glasgow, Dartmouth, King Abdulaziz University and COMSATS. I also serve as Associate Editor for Wiley’s Fellow in Engineering and review articles for IEEE, Elsevier, Wiley, MDPI and others."
-      ],
-      pills: [
-        "AI-enabled optimization",
-        "Multi-agent systems",
-        "Smart grids & microgrids",
-        "Energy–water–hydrogen nexus",
-        "Electric vehicle charging",
-        "Blockchain energy trading",
-        "Demand response",
-        "Load forecasting"
       ]
     },
 
@@ -195,6 +179,28 @@ const siteData = {
       ]
     },
 
+     {
+      id: "research",
+      navLabel: "Research",
+      title: "Research",
+      subtitle: "Interests & Highlights",
+      type: "text",
+      paragraphs: [
+        "My research focuses on data-driven and optimisation-based methods for sustainable energy and intelligent infrastructure. I work across demand response, load forecasting, electric vehicles, and integrated energy–water–hydrogen planning, often using machine learning, metaheuristics, and multi-agent systems.",
+        "I collaborate with partners in the UK, Spain, Saudi Arabia, China, the USA, and Pakistan, including Durham, Lancaster, Glasgow, Dartmouth, King Abdulaziz University and COMSATS. I also serve as Associate Editor for Wiley’s Fellow in Engineering and review articles for IEEE, Elsevier, Wiley, MDPI and others."
+      ],
+      pills: [
+        "AI-enabled optimization",
+        "Multi-agent systems",
+        "Smart grids & microgrids",
+        "Energy–water–hydrogen nexus",
+        "Electric vehicle charging",
+        "Blockchain energy trading",
+        "Demand response",
+        "Load forecasting"
+      ]
+    },
+
     {
       id: "publications",
       navLabel: "Publications",
@@ -203,59 +209,32 @@ const siteData = {
       type: "publications",
       intro:
         "Below is a short selection; your full list is available in the downloadable CV and on Google Scholar.",
-      items: [
-        {
-          title:
-            "An Optimization Cost Strategy for Storage-Enabled Hydrogen Flow Network using Monte Carlo Simulation",
-          venue: "Journal of Energy Storage, 2025",
-          authors: "M. B. Rasheed et al."
-        },
-        {
-          title:
-            "Blockchain-Based Energy Trading with Multi-Factor Trust: Ensuring Fairness and Security in Peer-to-Peer Energy Trading with Blockchain Technology",
-          venue: "Sustainable Energy, Grids and Networks, 2025",
-          authors: "M. Zulfiqar, M. B. Rasheed et al."
-        },
-        {
-          title:
-            "A Game-Theoretic Approach to Mitigate Charging Anxiety for EV Users through Multi-parameter Dynamic Pricing and Real-time Traffic Flow",
-          venue: "Energy, 2024",
-          authors: "M. B. Rasheed et al."
-        }
-        // Add more publications from CV as needed
-      ]
+      maxItem: 6,
     },
 
     {
-      id: "contact",
-      navLabel: "Contact",
-      title: "Contact & Links",
-      subtitle: "Get in touch",
-      type: "contact",
-      cards: [
-        {
-          heading: "Email",
-          body:
-            "For collaboration, supervision, or speaking invitations, please reach out via:",
-          html:
-            '<a href="mailto:muhammad.rasheed@uah.es">muhammad.rasheed@uah.es</a>'
-        },
-        {
-          heading: "Google Scholar",
-          body: "Publication list, citation metrics, and co-author network:",
-          html:
-            '<a href="https://scholar.google.es/citations?user=Rjj2sDMAAAAJ&hl=es" target="_blank" rel="noreferrer">View on Scholar</a>'
-        },
-        {
-          heading: "Other profiles",
-          body: "Replace the placeholders below with your real URLs:",
-          html:
-            '<ul class="small" style="margin-left: 16px; margin-top: 4px;">' +
-            "<li>GitHub: https://github.com/your-username</li>" +
-            "<li>LinkedIn: https://www.linkedin.com/in/your-profile</li>" +
-            "</ul>"
-        }
-      ]
+  id: "contact",                  // keep same id so the sidebar "Contact" still works
+  navLabel: "Contact",            // label in the sidebar nav (you can rename later)
+  title: "Research & Teaching at a Glance",
+  subtitle: "Visual overview",
+  type: "diagrams",               // <-- NEW type
+  boxes: [
+    {
+      heading: "Smart Energy Systems",
+      text: "High-level view of my work on smart grids, demand response, EV charging, and the energy–water–hydrogen nexus.",
+      img: "assets/img/EnergyReports.png"
+    },
+    {
+      heading: "AI & Optimisation",
+      text: "Meta-heuristics, deep learning and multi-agent systems for scheduling, forecasting, and decision support.",
+      img: null // e.g. "assets/img/diagram-ai.svg"
+    },
+    {
+      heading: "Teaching & Supervision",
+      text: "Modules, supervision and student projects across energy systems, optimisation, and machine learning.",
+      img: null // e.g. "assets/img/diagram-teaching.svg"
     }
+  ]
+}
   ]
 };

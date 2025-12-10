@@ -1,46 +1,35 @@
-// assets/js/main.js
+// assets/js/main.js 
 
 document.addEventListener("DOMContentLoaded", () => {
-  initSidebar("home", siteData);
-  renderNav(siteData.sections);
-  renderSections(siteData.sections);
+  initSidebar("home", siteData);     // sidebar (from sidebar.js)
+  renderNav(siteData.sections);      // top nav in sidebar
+  renderSections(siteData.sections); // main sections
   setupThemeToggle();
   setupIntersectionObserver();
 });
 
-function renderSidebar(data) {
-  const { profile, contact, profiles } = data;
+/** Get selected publications from global pubData (from pubs-data.js) */
+function getSelectedPubs(max = 6) {
+  const data = window.pubData;
+  if (!Array.isArray(data)) return [];
 
-  // Basic profile
-  document.getElementById("avatarInitials").textContent = profile.initials;
-  document.getElementById("name").textContent = profile.name;
-  document.getElementById("title").textContent = profile.title;
-  document.getElementById("location").textContent = profile.location;
+  const selected = [];
 
-  // Keywords
-  const keywordsContainer = document.getElementById("keywords");
-  profile.keywords.forEach((kw) => {
-    const chip = document.createElement("div");
-    chip.className = "chip";
-    chip.textContent = kw;
-    keywordsContainer.appendChild(chip);
+  data.forEach((yearBlock) => {
+    (yearBlock.items || []).forEach((item) => {
+      if (item.tags && item.tags.includes("Selected")) {
+        selected.push({
+          year: yearBlock.year,
+          ...item
+        });
+      }
+    });
   });
 
-  // Contact list
-  const contactList = document.getElementById("contactList");
-  contact.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<span class="label">${item.label}:</span><br>${item.html}`;
-    contactList.appendChild(li);
-  });
+  // Newest first
+  selected.sort((a, b) => b.year - a.year);
 
-  // Profiles list
-  const profilesList = document.getElementById("profilesList");
-  profiles.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = item.html;
-    profilesList.appendChild(li);
-  });
+  return selected.slice(0, max);
 }
 
 function renderNav(sections) {
@@ -56,13 +45,13 @@ function renderNav(sections) {
     if (idx === 0) btn.classList.add("active");
 
     btn.addEventListener("click", () => {
-      // 🔹 Special case: Publications goes to publications.html
+      // Special case: Publications goes to publications.html
       if (sec.id === "publications") {
         window.location.href = "publications.html";
         return;
       }
 
-      // 🔹 All other buttons scroll to their section on the same page
+      // All other buttons scroll to their section on the same page
       const target = document.getElementById(sec.id);
       if (target) {
         target.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -72,9 +61,6 @@ function renderNav(sections) {
     nav.appendChild(btn);
   });
 }
-
-
-
 
 function renderSections(sections) {
   const content = document.getElementById("content");
@@ -92,6 +78,7 @@ function renderSections(sections) {
     `;
     sectionEl.appendChild(header);
 
+    // --- TEXT SECTIONS ---
     if (sec.type === "text") {
       sec.paragraphs.forEach((p) => {
         const para = document.createElement("p");
@@ -124,6 +111,7 @@ function renderSections(sections) {
       }
     }
 
+    // --- TIMELINE SECTIONS (Experience, Education, etc.) ---
     if (sec.type === "timeline") {
       const timeline = document.createElement("div");
       timeline.className = "timeline";
@@ -132,16 +120,16 @@ function renderSections(sections) {
         const itemEl = document.createElement("article");
         itemEl.className = "timeline-item";
 
-        const header = document.createElement("div");
-        header.className = "timeline-header";
-        header.innerHTML = `
+        const itemHeader = document.createElement("div");
+        itemHeader.className = "timeline-header";
+        itemHeader.innerHTML = `
           <div>
             <div class="timeline-role">${item.role}</div>
             <div class="timeline-org">${item.org}</div>
           </div>
           <div class="timeline-meta">${item.meta || ""}</div>
         `;
-        itemEl.appendChild(header);
+        itemEl.appendChild(itemHeader);
 
         if (item.description) {
           const desc = document.createElement("p");
@@ -167,22 +155,34 @@ function renderSections(sections) {
       sectionEl.appendChild(timeline);
     }
 
+    // --- SELECTED PUBLICATIONS (home page section) ---
     if (sec.type === "publications") {
       if (sec.intro) {
         const para = document.createElement("p");
         para.className = "small";
-        para.textContent = sec.intro;
+        // use innerHTML if intro contains links
+        para.innerHTML = sec.intro;
         sectionEl.appendChild(para);
       }
 
       const ul = document.createElement("ul");
       ul.className = "pub-list";
 
-      sec.items.forEach((pub) => {
+      // 🔹 NOW: get items from pubData, not from sec.items
+      const maxItems = sec.maxItems || 6; // you can set maxItems in data.js
+      const selectedPubs = getSelectedPubs(maxItems);
+
+      selectedPubs.forEach((pub) => {
         const li = document.createElement("li");
         li.innerHTML = `
-          <div class="pub-title">${pub.title}</div>
-          <div class="pub-meta"><strong>${pub.venue}</strong> – ${pub.authors}</div>
+          <div class="pub-title">${pub.citation}</div>
+          <div class="pub-meta small">
+            Year: ${pub.year}${
+              pub.tags && pub.tags.includes("Selected")
+                ? ' · <span class="badge">Selected</span>'
+                : ""
+            }
+          </div>
         `;
         ul.appendChild(li);
       });
@@ -190,24 +190,49 @@ function renderSections(sections) {
       sectionEl.appendChild(ul);
     }
 
-    if (sec.type === "contact") {
+    // --- DIAGRAMS SECTION (new last section) ---
+    if (sec.type === "diagrams") {
       const grid = document.createElement("div");
-      grid.className = "contact-grid";
+      grid.className = "diagram-grid";
 
-      sec.cards.forEach((card) => {
-        const c = document.createElement("div");
-        c.className = "contact-card";
-        c.innerHTML = `
-          <h4>${card.heading}</h4>
-          <p>${card.body}</p>
-          <p>${card.html}</p>
-        `;
-        grid.appendChild(c);
+      sec.boxes.forEach((box) => {
+        const boxEl = document.createElement("article");
+        boxEl.className = "diagram-box";
+
+        const h4 = document.createElement("h4");
+        h4.textContent = box.heading;
+        boxEl.appendChild(h4);
+
+        if (box.img) {
+          const imgWrap = document.createElement("div");
+          imgWrap.className = "diagram-img-wrap";
+
+          const img = document.createElement("img");
+          img.src = box.img;
+          img.alt = box.heading;
+          imgWrap.appendChild(img);
+
+          boxEl.appendChild(imgWrap);
+        } else {
+          const placeholder = document.createElement("div");
+          placeholder.className = "diagram-placeholder";
+          placeholder.textContent = "Diagram goes here";
+          boxEl.appendChild(placeholder);
+        }
+
+        if (box.text) {
+          const p = document.createElement("p");
+          p.textContent = box.text;
+          boxEl.appendChild(p);
+        }
+
+        grid.appendChild(boxEl);
       });
 
       sectionEl.appendChild(grid);
     }
 
+    // Finally append the whole section
     content.appendChild(sectionEl);
   });
 }
@@ -218,21 +243,41 @@ function setupThemeToggle() {
   const themeToggle = document.getElementById("themeToggle");
   const themeIcon = document.getElementById("themeIcon");
 
+  // 1) Check if user already chose something
   const storedTheme = localStorage.getItem("theme");
+
+  let isDark;
   if (storedTheme === "dark") {
-    body.classList.add("dark");
-    themeIcon.textContent = "☀️";
+    isDark = true;
+  } else if (storedTheme === "light") {
+    isDark = false;
+  } else {
+    // 2) No stored preference → use system preference
+    const prefersDark = window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    isDark = prefersDark;
   }
 
+  // Apply initial theme
+  if (isDark) {
+    body.classList.add("dark");
+    themeIcon.textContent = "☀️"; // sun = currently dark, click for light
+  } else {
+    body.classList.remove("dark");
+    themeIcon.textContent = "🌙"; // moon = currently light, click for dark
+  }
+
+  // 3) Let user toggle + store preference
   themeToggle.addEventListener("click", () => {
     body.classList.toggle("dark");
-    const isDark = body.classList.contains("dark");
-    themeIcon.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    const nowDark = body.classList.contains("dark");
+    themeIcon.textContent = nowDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", nowDark ? "dark" : "light");
   });
 }
 
-/* Active nav on scroll like tuhoang.me */
+
+/* Active nav on scroll */
 function setupIntersectionObserver() {
   const sections = document.querySelectorAll(".section");
   const navButtons = document.querySelectorAll(".nav button");

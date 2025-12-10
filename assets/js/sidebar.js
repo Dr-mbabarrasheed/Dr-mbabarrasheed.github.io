@@ -40,6 +40,13 @@ sidebar.innerHTML = `
     <h3>Profiles &amp; CV</h3>
     <ul id="profilesList"></ul>
   </section>
+   <footer class="sidebar-footer">
+    © 2025 
+    <a href="https://www.linkedin.com/in/shahidabbas76/" target="_blank" class="footer-link">
+      Shahid Abbas
+    </a>. 
+    All rights reserved.
+  </footer>
 `;
 
 
@@ -72,21 +79,36 @@ sidebar.innerHTML = `
   });
 
   // Contact
-  const contactList = document.getElementById("contactList");
-  contact.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<span class="label">${item.label}:</span><br>${item.html}`;
-    contactList.appendChild(li);
-  });
+const contactList = document.getElementById("contactList");
+
+contact.forEach((item) => {
+  const li = document.createElement("li");
+  li.classList.add("contact-item");
+
+ li.innerHTML = `
+  <i class="${item.icon} contact-icon"></i>
+  <div class="contact-text">${item.html}</div>
+`;
+
+
+  contactList.appendChild(li);
+});
+
 
   // Profiles
-  const profilesList = document.getElementById("profilesList");
-  profiles.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = item.html;
-    profilesList.appendChild(li);
-  });
+    const profilesList = document.getElementById("profilesList");
+    profilesList.classList.add("profiles-grid");
 
+    profiles.forEach((item) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
+        <a href="${item.url}" target="_blank" class="profile-icon-link">
+        <i class="${item.icon} profile-icon"></i>
+        <span>${item.name}</span>
+        </a>
+    `;
+    profilesList.appendChild(li);
+    });
   // NAV content depends on page
   const nav = document.getElementById("nav");
 
@@ -104,5 +126,6 @@ sidebar.innerHTML = `
         <button type="button" class="active">${label}</button>
     `;
     }
+
 
 }

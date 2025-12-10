@@ -2,123 +2,118 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   initSidebar("publications", siteData);
-  renderPublications(pubData);
+  renderPublications();
   setupThemeToggle();
 });
 
-function renderSidebarFromSiteData(data) {
-  const { profile, contact, profiles } = data;
-
-  document.getElementById("avatarInitials").textContent = profile.initials;
-  document.getElementById("name").textContent = profile.name;
-  document.getElementById("title").textContent = profile.title;
-  document.getElementById("location").textContent = profile.location;
-
-  // Keywords
-  const keywordsContainer = document.getElementById("keywords");
-  profile.keywords.forEach((kw) => {
-    const chip = document.createElement("div");
-    chip.className = "chip";
-    chip.textContent = kw;
-    keywordsContainer.appendChild(chip);
-  });
-
-  // Contact
-  const contactList = document.getElementById("contactList");
-  contact.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = `<span class="label">${item.label}:</span><br>${item.html}`;
-    contactList.appendChild(li);
-  });
-
-  // Profiles
-  const profilesList = document.getElementById("profilesList");
-  profiles.forEach((item) => {
-    const li = document.createElement("li");
-    li.innerHTML = item.html;
-    profilesList.appendChild(li);
-  });
-}
-
-function renderPublications(pubData) {
+function renderPublications() {
   const container = document.getElementById("pubsSection");
-  container.innerHTML = ""; // clear, in case
+  if (!container || !Array.isArray(pubData)) return;
 
-  pubData.groups
-    .sort((a, b) => b.year - a.year) // newest year first
-    .forEach((group) => {
-      const yearHeading = document.createElement("h3");
-      yearHeading.textContent = group.year;
-      yearHeading.style.marginTop = "12px";
-      yearHeading.style.marginBottom = "6px";
-      container.appendChild(yearHeading);
+  container.innerHTML = ""; // clear
 
-      const list = document.createElement("ul");
-      list.className = "pub-list";
+  // Newest year first
+  const sorted = [...pubData].sort((a, b) => b.year - a.year);
 
-      group.items.forEach((pub) => {
-        const li = document.createElement("li");
+  sorted.forEach((yearBlock) => {
+    // Year heading
+    const yearHeading = document.createElement("h3");
+    yearHeading.className = "pub-year";
+    yearHeading.textContent = yearBlock.year;
+    container.appendChild(yearHeading);
 
-        // Title + meta
-        const titleDiv = document.createElement("div");
-        titleDiv.className = "pub-title";
-        titleDiv.textContent = pub.title;
-        li.appendChild(titleDiv);
+    // List for that year
+    const list = document.createElement("ul");
+    list.className = "pub-list";
 
-        const metaDiv = document.createElement("div");
-        metaDiv.className = "pub-meta";
-        metaDiv.textContent = `${pub.authors} — ${pub.venue}`;
-        li.appendChild(metaDiv);
+    (yearBlock.items || []).forEach((pub) => {
+      const li = document.createElement("li");
+      li.className = "pub-item";
 
-        // Links row
-        const links = [];
-        if (pub.pdfUrl) {
-          links.push(
-            `<a href="${pub.pdfUrl}" target="_blank" rel="noreferrer">PDF</a>`
-          );
-        }
-        if (pub.codeUrl) {
-          links.push(
-            `<a href="${pub.codeUrl}" target="_blank" rel="noreferrer">Code</a>`
-          );
-        }
-        if (pub.pubUrl) {
-          links.push(
-            `<a href="${pub.pubUrl}" target="_blank" rel="noreferrer">Publisher</a>`
-          );
-        }
+      // Citation text
+      const citationDiv = document.createElement("div");
+      citationDiv.className = "pub-citation";
+      citationDiv.textContent = pub.citation || "";
+      li.appendChild(citationDiv);
 
-        if (links.length > 0) {
-          const linkDiv = document.createElement("div");
-          linkDiv.className = "small";
-          linkDiv.style.marginTop = "4px";
-          linkDiv.innerHTML = links.join(" · ");
-          li.appendChild(linkDiv);
-        }
+      // Tags row (e.g. Selected)
+      const metaDiv = document.createElement("div");
+      metaDiv.className = "pub-meta small";
+      if (pub.tags && pub.tags.includes("Selected")) {
+        metaDiv.innerHTML = `<span class="badge">Selected</span>`;
+      }
+      li.appendChild(metaDiv);
 
-        list.appendChild(li);
-      });
+      // Links row
+      const links = [];
+      if (pub.pubUrl) {
+        links.push(
+          `<a href="${pub.pubUrl}" target="_blank" rel="noreferrer">📄 Publisher</a>`
+        );
+      }
+      if (pub.pdfUrl) {
+        links.push(
+          `<a href="${pub.pdfUrl}" target="_blank" rel="noreferrer">PDF</a>`
+        );
+      }
+      if (pub.codeUrl) {
+        links.push(
+          `<a href="${pub.codeUrl}" target="_blank" rel="noreferrer">💻 Code</a>`
+        );
+      }
 
-      container.appendChild(list);
+      if (links.length > 0) {
+        const linkDiv = document.createElement("div");
+        linkDiv.className = "small pub-links";
+        linkDiv.innerHTML = links.join(" · ");
+        li.appendChild(linkDiv);
+      }
+
+      list.appendChild(li);
     });
+
+    container.appendChild(list);
+  });
 }
 
-/* Theme toggle (same behaviour as main page) */
+/* Theme toggle (same behaviour as main page, inc. system preference) */
 function setupThemeToggle() {
   const body = document.body;
   const themeToggle = document.getElementById("themeToggle");
   const themeIcon = document.getElementById("themeIcon");
 
+  if (!themeToggle || !themeIcon) return;
+
+  // 1) Check if user already chose something
   const storedTheme = localStorage.getItem("theme");
+
+  let isDark;
   if (storedTheme === "dark") {
-    body.classList.add("dark");
-    themeIcon.textContent = "☀️";
+    isDark = true;
+  } else if (storedTheme === "light") {
+    isDark = false;
+  } else {
+    // 2) No stored preference → use system preference
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    isDark = prefersDark;
   }
 
+  // Apply initial theme
+  if (isDark) {
+    body.classList.add("dark");
+    themeIcon.textContent = "☀️"; // dark now, click to go light
+  } else {
+    body.classList.remove("dark");
+    themeIcon.textContent = "🌙"; // light now, click to go dark
+  }
+
+  // 3) Let user toggle + store preference
   themeToggle.addEventListener("click", () => {
     body.classList.toggle("dark");
-    const isDark = body.classList.contains("dark");
-    themeIcon.textContent = isDark ? "☀️" : "🌙";
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    const nowDark = body.classList.contains("dark");
+    themeIcon.textContent = nowDark ? "☀️" : "🌙";
+    localStorage.setItem("theme", nowDark ? "dark" : "light");
   });
 }
