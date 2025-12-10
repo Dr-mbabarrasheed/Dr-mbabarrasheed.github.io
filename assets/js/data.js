@@ -209,7 +209,7 @@ profiles: [
       type: "publications",
       intro:
         "Below is a short selection; your full list is available in the downloadable CV and on Google Scholar.",
-      maxItem: 6,
+      maxItem: 4
     },
 
     {

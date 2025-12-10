@@ -2,7 +2,7 @@
 
 // Make pubData global so main.js and publications.js can use it
 
-const pubData = [
+window.pubData = [
   {
     year: 2025,
     items: [

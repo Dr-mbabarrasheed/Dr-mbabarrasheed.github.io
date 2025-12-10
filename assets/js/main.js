@@ -11,7 +11,10 @@ document.addEventListener("DOMContentLoaded", () => {
 /** Get selected publications from global pubData (from pubs-data.js) */
 function getSelectedPubs(max = 6) {
   const data = window.pubData;
-  if (!Array.isArray(data)) return [];
+  if (!Array.isArray(data)) {
+    console.warn("pubData is not an array or not loaded.");
+    return [];
+  }
 
   const selected = [];
 
@@ -26,7 +29,7 @@ function getSelectedPubs(max = 6) {
     });
   });
 
-  // Newest first
+  // Newest year first
   selected.sort((a, b) => b.year - a.year);
 
   return selected.slice(0, max);
@@ -168,24 +171,33 @@ function renderSections(sections) {
       const ul = document.createElement("ul");
       ul.className = "pub-list";
 
-      // 🔹 NOW: get items from pubData, not from sec.items
-      const maxItems = sec.maxItems || 6; // you can set maxItems in data.js
+      const maxItems = sec.maxItems || 6;
       const selectedPubs = getSelectedPubs(maxItems);
 
-      selectedPubs.forEach((pub) => {
+      if (selectedPubs.length === 0) {
         const li = document.createElement("li");
         li.innerHTML = `
-          <div class="pub-title">${pub.citation}</div>
-          <div class="pub-meta small">
-            Year: ${pub.year}${
-              pub.tags && pub.tags.includes("Selected")
-                ? ' · <span class="badge">Selected</span>'
-                : ""
-            }
+          <div class="pub-title small">
+            No selected publications found. Make sure <code>pubs-data.js</code> has items with <code>tags: ["Selected"]</code>.
           </div>
         `;
         ul.appendChild(li);
-      });
+      } else {
+        selectedPubs.forEach((pub) => {
+          const li = document.createElement("li");
+          li.innerHTML = `
+            <div class="pub-title">${pub.citation}</div>
+            <div class="pub-meta small">
+              Year: ${pub.year}${
+                pub.tags && pub.tags.includes("Selected")
+                  ? ' · <span class="badge">Selected</span>'
+                  : ""
+              }
+            </div>
+          `;
+          ul.appendChild(li);
+        });
+      }
 
       sectionEl.appendChild(ul);
     }
