@@ -40,6 +40,16 @@ sidebar.innerHTML = `
     <h3>Profiles &amp; CV</h3>
     <ul id="profilesList"></ul>
   </section>
+
+  <section class="sidebar-section sidebar-visitor">
+    <a href="https://info.flagcounter.com/igNi" target="_blank" rel="noreferrer">
+      <img
+        src="https://s01.flagcounter.com/count/igNi/bg_FFFCFC/txt_000000/border_FFFFFF/columns_3/maxflags_12/viewers_0/labels_0/pageviews_1/flags_0/percent_0/"
+        alt="Visitor statistics by country"
+        loading="lazy"
+      />
+    </a>
+  </section>
    <footer class="sidebar-footer">
     © 2025 
     <a href="https://www.linkedin.com/in/shahidabbas76/" target="_blank" class="footer-link">

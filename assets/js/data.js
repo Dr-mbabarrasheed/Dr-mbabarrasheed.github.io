@@ -5,7 +5,7 @@ const siteData = {
     initials: "MBR",
     photoUrl: "assets/img/profile.jpg",   // <-- NEW
     name: "Muhammad Babar Rasheed",
-    title: "GET-COFUND Marie Curie Fellow,",
+    title: "Marie Curie Fellow,",
     location: "Universidad de Alcalá, Madrid, Spain",
     keywords: [
       
@@ -106,7 +106,7 @@ profiles: [
         //   pills: ["Teaching & research", "ML & optimisation", "Student supervision", "Research funding"]
         // },
         {
-          role: "Marie Curie COFUND Fellow (MSCA)",
+          role: "GET-COFUND Marie Curie Fellow (MSCA)",
           org: "Universidad de Alcalá, Spain",
           meta: "Jan 2021 – May 2023",
           description:

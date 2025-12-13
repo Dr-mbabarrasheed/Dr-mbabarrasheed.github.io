@@ -642,6 +642,21 @@ body.dark .contact-card {
   cursor: grabbing;
 }
 
+/* Global text justification */
+body {
+  text-align: justify;
+  text-justify: inter-word;
+}
 
 
+/* Reduce spacing between contact items */
+#contactList {
+  padding-left: 0;
+  margin: 0;
+}
+
+#contactList li {
+  margin-bottom: 4px;   /* default is usually ~12–16px */
+  line-height: 1.25;
+}
 
