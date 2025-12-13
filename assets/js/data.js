@@ -5,8 +5,8 @@ const siteData = {
     initials: "MBR",
     photoUrl: "assets/img/profile.jpg",   // <-- NEW
     name: "Muhammad Babar Rasheed",
-    title: "Researcher,",
-    location: "Spain",
+    title: "GET-COFUND Marie Curie Fellow,",
+    location: "Universidad de Alcalá, Madrid, Spain",
     keywords: [
       
       "Energy–Water–Hydrogen Nexus",
@@ -76,7 +76,7 @@ profiles: [
       subtitle: "Profile",
       type: "text",
       paragraphs: [
-        "I am an academic, researcher, and educator specialising in electronics engineering, optimisation algorithms, and intelligent energy systems.",
+        "I am an academic researcher at Universidad de Alcalá, Madrid, Spain and I am specialising in electronics engineering, optimisation algorithms, and intelligent energy systems.",
         "My background spans BS and MS degrees in Electrical / Electronics Engineering and a PhD in Computer Engineering (COMSATS University Islamabad), including visiting doctoral research at Dartmouth College, USA. I am a Fellow of the Higher Education Academy (FHEA) and a Senior Member of IEEE. My research addresses AI-enabled optimisation, multi-agent smart grids, the energy–water–hydrogen nexus, and blockchain-based energy trading.",
         "I have led and contributed to multi-institutional projects with more than €1.2M in funding from agencies such as Horizon 2020 MSCA, Leverhulme Trust, Spanish MICINN, King Abdulaziz University, and the Higher Education Commission of Pakistan."
       ],
