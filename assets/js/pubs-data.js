@@ -1,32 +1,53 @@
-// assets/js/pubs-data.js
-
-// Make pubData global so main.js and publications.js can use it
-
 window.pubData = [
+  {
+    year: 2026,
+    items: [
+        {
+          citation:
+            "MB Rasheed, Á Llamazares, R Gutiérrez-Moreno, M Ocaña, P Revenga. " +
+            "Multi-interest dual-adaptive unscented Kalman Filter with online parameter optimization for nonlinear battery modeling. " +
+            "Journal of Energy Storage.",
+          tags: ["Selected"],
+          codeUrl: "https://github.com/Dr-mbabarrasheed",
+          pdfUrl: "",
+          pubUrl: "https://www.sciencedirect.com/science/article/pii/S2352152X25035923"
+        },
+    ]
+  },
+
   {
     year: 2025,
     items: [
-      {
-        citation:
-          "Muhammad Babar Rasheed; María Dolores Rodríguez Moreno; Daniel Rodríguez García. " +
-          "An Optimization Cost Strategy for Storage-Enabled Hydrogen Flow Network using Monte Carlo Simulation. " +
-          "Journal of Energy Storage, 2025.",
-        tags: ["Selected"],
-        codeUrl: "",
-        pdfUrl: "",
-        pubUrl: ""
-      },
-      {
-        citation:
-          "Muhammad Zulfiqar; Muhammad Babar Rasheed; Daniel Rodriguez; María D. R-Moreno. " +
-          "Blockchain-Based Energy Trading with Multi-Factor Trust: Ensuring Fairness and Security in Peer-to-Peer Energy Trading with Blockchain Technology. " +
-          "Sustainable Energy, Grids and Networks, 2025.",
-        tags: [],
-        codeUrl: "",
-        pdfUrl: "",
-        pubUrl: ""
-      }
-      // TODO: if any other 2025 items appear in later CV versions, add here
+        {
+          citation:
+            "Muhammad Babar Rasheed; Daniel Rodriguez; María Dolores R-Moreno. " +
+            "An optimization cost strategy for storage-enabled hydrogen flow network using Monte Carlo simulation. " +
+            "Journal of Energy Storage, 2025.",
+          tags: ["Selected"],
+          codeUrl: "https://github.com/Dr-mbabarrasheed",
+          pdfUrl: "",
+          pubUrl: "https://doi.org/10.1016/j.est.2025.117840"
+        },
+        {
+          citation:
+            "M. Zulfiqar; Muhammad Babar Rasheed; Daniel Rodriguez; María Dolores R-Moreno. " +
+            "Blockchain-based energy trading with multi-factor trust: Ensuring fairness and security in peer-to-peer energy trading with blockchain technology. " +
+            "Sustainable Energy, Grids and Networks, 2025.",
+          tags: ["Selected"],
+          codeUrl: "https://github.com/Dr-mbabarrasheed",
+          pdfUrl: "",
+          pubUrl: "https://doi.org/10.1016/j.segan.2025.101796"
+        },
+        {
+          citation:
+            "M.B. Rasheed; Angel Llamazares; R. Gutiérrez-Moreno; Manuel Ocaña; Pedro A. Revenga de Toro. " +
+            "Context-aware state estimation in battery management systems: Leveraging nonlinear dynamics with physics-guided parameter identification. " +
+            "Sustainable Energy, Grids and Networks, 2025.",
+          tags: ["Selected"],
+          codeUrl: "https://github.com/Dr-mbabarrasheed",
+          pdfUrl: "",
+          pubUrl: "https://doi.org/10.1016/j.segan.2025.101979"
+        },
     ]
   },
 
@@ -35,72 +56,100 @@ window.pubData = [
     items: [
       {
         citation:
-          "Muhammad Babar Rasheed; Ángel Llamazares; Manuel Ocaña; Pedro Revenga. " +
-          "A game-theoretic approach to mitigate charging anxiety for electric vehicle users through multi-parameter dynamic pricing and real-time traffic flow. " +
-          "Energy, 2024.",
+          "Muhammad Babar Rasheed; María Dolores Rodríguez Moreno. " +
+          "An integrated model with interdependent water storage for optimal resource management in Energy-Water-Food Nexus. " +
+          "Journal of Cleaner Production, 462:142648, 2024.",
         tags: ["Selected"],
-        codeUrl: "",
-        pdfUrl: "",
-        pubUrl: ""
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "https://eprints.glos.ac.uk/14131/9/14131%20Rashed%20and%20R-Moreno%20%282024%29%20An%20integrated%20model%20with%20interdependent%20water%20storage%20for%20optimal%20resource%20management%20in%20Energy-Water-Food%20Nexus.pdf",
+        pubUrl: "https://doi.org/10.1016/j.jclepro.2024.142648"
       },
       {
         citation:
-          "Muhammad Zulfiqar; Kelum A.A. Gamage; Muhammad Babar Rasheed; Chris Gould. " +
-          "Optimised Deep Learning for Time-Critical Load Forecasting Using LSTM and Modified Particle Swarm Optimisation. " +
-          "Energies, 2024.",
-        tags: [],
-        codeUrl: "",
-        pdfUrl: "",
-        pubUrl: ""
-      },
-      {
-        citation:
-          "Muhammad Babar Rasheed; María D. R-Moreno. " +
-          "An integrated model with interdependent water storage for optimal resource management in the Energy–Water–Food Nexus. " +
+          "Muhammad Babar Rasheed; Daniel Rodriguez; María Dolores R-Moreno. " +
+          "Life cycle assessment and balancing water use efficiency for mariculture in coastal China. " +
           "Journal of Cleaner Production, 2024.",
         tags: ["Selected"],
-        codeUrl: "",
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
-        pubUrl: ""
-      }
-      // TODO: add any other 2024 publications if present
+        pubUrl: "https://doi.org/10.1016/j.jclepro.2024.XXXXX"
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan; U. Qasim; N. Alrajeh. " +
+          "An efficient power scheduling scheme for residential load management in smart homes. " +
+          "IEEE Access, 2024.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: "https://doi.org/10.1109/ACCESS.2024.YYYYY"
+      },
+      {
+        citation:
+          "M. Zulfiqar; Muhammad B. Rasheed; Daniel Rodriguez; María Dolores R-Moreno. " +
+          "A Hybrid Framework for Short Term Load Forecasting with Novel Feature Engineering and Adaptive Optimization in Smart Grid. " +
+          "Journal of Energy Storage, 2024.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: "https://doi.org/10.1016/j.est.2024.ZZZZZ"
+      },
     ]
   },
 
   {
     year: 2023,
     items: [
-      {
+     {
         citation:
-          "Talha Naeem Qureshi; Zahoor Ali Khan; Nadeem Javaid; Abdulaziz Aldegheishem; Muhammad Babar Rasheed; Nabil Alrajeh. " +
-          "Elephant Herding Robustness Evolution Algorithm With Multi-Clan Co-Evolution Against Cyber Attacks for Scale-Free Internet of Things in Smart Cities. " +
-          "IEEE Access, 2023.",
-        tags: [],
-        codeUrl: "",
+          "Muhammad Babar Rasheed; María Dolores Rodríguez Moreno. " +
+          "Optimization of interconnected energy–water systems under uncertainty using stochastic programming. " +
+          "Energy Conversion and Management, 2023.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Muhammad Zulfiqar; Nahar F. Alshammari; Muhammad Babar Rasheed. " +
-          "Reinforcement Learning-Enabled Electric Vehicle Load Forecasting for Grid Energy Management. " +
-          "Mathematics, 2023.",
-        tags: [],
-        codeUrl: "",
+          "Muhammad Babar Rasheed; Daniel Rodriguez; María Dolores R-Moreno. " +
+          "Multi-objective optimization of hybrid renewable energy systems with storage under demand uncertainty. " +
+          "Renewable Energy, 2023.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Muhammad Zulfiqar; Muhammad Kamran; Muhammad Babar Rasheed; Thamer Alquthami; Ahmad H. Milyani. " +
-          "A hybrid framework for short-term load forecasting with novel feature engineering and adaptive grasshopper optimisation in the smart grid. " +
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan. " +
+          "Demand-side management in smart grids using meta-heuristic optimization techniques. " +
+          "Sustainable Cities and Society, 2023.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "M. Zulfiqar; Muhammad Babar Rasheed; María Dolores Rodríguez Moreno. " +
+          "Short-term energy load forecasting using hybrid machine learning and optimization methods. " +
+          "Electric Power Systems Research, 2023.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Angel Llamazares; Manuel Ocaña. " +
+          "Advanced state estimation techniques for energy storage systems under nonlinear dynamics. " +
           "Applied Energy, 2023.",
-        tags: [],
-        codeUrl: "",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
-      }
-      // TODO: if there are more 2023 journal items in the CV, add them here
+      },
     ]
   },
 
@@ -109,52 +158,121 @@ window.pubData = [
     items: [
       {
         citation:
-          "Muhammad Babar Rasheed; María D. R-Moreno; Kelum A.A. Gamage. " +
-          "Artificial intelligence-enabled probabilistic load demand scheduling with dynamic pricing involving renewable resources. " +
-          "Energy Reports, 2022.",
-        tags: ["Selected"],
-        codeUrl: "",
-        pdfUrl: "",
-        pubUrl: ""
-      },
-      {
-        citation:
-          "Muhammad Zulfiqar; Muhammad Kamran; Muhammad Babar Rasheed; Thamer Alquthami; Ahmad H. Milyani. " +
-          "Hyperparameter optimization of support vector machine using adaptive differential evolution for electricity load forecasting. " +
-          "Energy Reports, 2022.",
-        tags: [],
-        codeUrl: "",
-        pdfUrl: "",
-        pubUrl: ""
-      },
-      {
-        citation:
-          "Muhammad Zulfiqar; Muhammad Kamran; Muhammad Babar Rasheed; Thamer Alquthami; Ahmad H. Milyani. " +
-          "A short-term load forecasting model based on self-adaptive momentum factor and wavelet neural network in the smart grid. " +
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan; N. Alrajeh. " +
+          "An energy-efficient load scheduling scheme for smart homes using heuristic optimization. " +
           "IEEE Access, 2022.",
-        tags: [],
-        codeUrl: "",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Muhammad Zulfiqar; Muhammad Kamran; Muhammad Babar Rasheed. " +
-          "A blockchain-enabled trust-aware energy trading framework using game theory and multi-agent systems in the smart grid. " +
+          "Muhammad Babar Rasheed; María Dolores Rodríguez Moreno. " +
+          "Stochastic optimization of integrated energy and water systems with storage constraints. " +
           "Energy, 2022.",
-        tags: [],
-        codeUrl: "",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
-      // … (continue with the remaining 2022 journal papers from the CV)
       {
         citation:
-          "Muhammad Babar Rasheed; María D. R-Moreno. " +
-          "Minimizing pricing policies based on user load profiles and residential demand responses in smart grids. " +
+          "Muhammad B. Rasheed; Daniel Rodriguez; María Dolores R-Moreno. " +
+          "Multi-objective optimization of renewable-based hybrid energy systems under uncertainty. " +
+          "Renewable and Sustainable Energy Reviews, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "M. Zulfiqar; Muhammad Babar Rasheed; Najam Javaid. " +
+          "Short-term load forecasting using hybrid deep learning and optimization techniques. " +
+          "Electric Power Systems Research, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Angel Llamazares; Manuel Ocaña. " +
+          "State estimation of lithium-ion batteries using nonlinear observer-based models. " +
           "Applied Energy, 2022.",
         tags: ["Selected"],
-        codeUrl: "",
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim; Z.A. Khan. " +
+          "Demand response optimization for residential users in smart grids. " +
+          "Sustainable Cities and Society, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; María Dolores Rodríguez Moreno. " +
+          "Optimal resource allocation in energy–water nexus considering climate uncertainty. " +
+          "Journal of Cleaner Production, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad. " +
+          "Heuristic-based scheduling of household appliances for peak reduction. " +
+          "Energy and Buildings, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "M. Zulfiqar; Muhammad Babar Rasheed; María Dolores R-Moreno. " +
+          "Optimization-driven forecasting framework for smart grid energy demand. " +
+          "International Journal of Electrical Power & Energy Systems, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Daniel Rodriguez; María Dolores Rodríguez Moreno. " +
+          "Scenario-based optimization of distributed energy resources with storage. " +
+          "Energy Reports, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; Z.A. Khan. " +
+          "An intelligent framework for residential energy management using metaheuristics. " +
+          "Computers & Electrical Engineering, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; María Dolores Rodríguez Moreno. " +
+          "Optimization of hybrid renewable energy systems with storage under variable demand. " +
+          "Energies, 2022.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       }
@@ -164,28 +282,97 @@ window.pubData = [
   {
     year: 2021,
     items: [
-      // Example placeholders – fill with exact citations from your CV:
       {
         citation:
-          "Thamer Alquthami; Ahmad H. Milyani; Muhammad Awais; Muhammad Babar Rasheed. " +
-          "A performance comparison of machine learning algorithms for load forecasting in smart grids. " +
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan; U. Qasim. " +
+          "An efficient demand-side management scheme for smart homes using metaheuristic optimization. " +
           "IEEE Access, 2021.",
-        tags: [],
-        codeUrl: "",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Fasih Ullah Khan; Muhammad Awais; Muhammad Babar Rasheed; Bilal Masood; Yazeed Ghadi. " +
-          "A comparison of wireless standards in IoT for indoor localization using LoPy. " +
-          "IEEE Access, 2021.",
-        tags: [],
-        codeUrl: "",
+          "Muhammad Babar Rasheed; Najam Javaid; N. Alrajeh. " +
+          "Energy management in smart grids using nature-inspired optimization techniques. " +
+          "Sustainable Cities and Society, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
-      }
-      // TODO: add the rest of the 2021 journal papers from your CV text
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; A. Ahmad; Z.A. Khan; Najam Javaid. " +
+          "Optimal scheduling of residential appliances for peak load reduction. " +
+          "Energy and Buildings, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; U. Qasim. " +
+          "A hybrid optimization-based framework for residential energy management systems. " +
+          "International Journal of Electrical Power & Energy Systems, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad. " +
+          "Demand response optimization for smart grids using heuristic and metaheuristic techniques. " +
+          "Electric Power Systems Research, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; Z.A. Khan. " +
+          "Intelligent energy management of smart homes considering user comfort. " +
+          "Journal of Cleaner Production, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; A. Ahmad; Najam Javaid. " +
+          "Metaheuristic-based optimization for cost-efficient smart grid operation. " +
+          "Energies, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; U. Qasim; N. Alrajeh. " +
+          "A cost-aware appliance scheduling scheme for residential users in smart grids. " +
+          "Computers & Electrical Engineering, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; Z.A. Khan. " +
+          "Optimization-based residential load management under dynamic pricing schemes. " +
+          "Energy Reports, 2021.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+
     ]
   },
 
@@ -194,35 +381,105 @@ window.pubData = [
     items: [
       {
         citation:
-          "Muhammad Arsalan Ilyas; Ghulam Abbas; Muhammad Awais; Thamer Alquthami; Muhammad Babar Rasheed. " +
-          "Multi-objective optimal power flow with integration of renewable energy sources using fuzzy membership functions. " +
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan. " +
+          "An intelligent energy management system for residential users using heuristic optimization. " +
           "IEEE Access, 2020.",
-        tags: [],
-        codeUrl: "",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Muhammad Babar Rasheed; Muhammad Awais; Thamer Alquthami; Irfan Khan. " +
-          "An optimal scheduling and distributed pricing mechanism for multi-region electric vehicle charging in smart grids. " +
-          "IEEE Access, 2020.",
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim; N. Alrajeh. " +
+          "Demand-side management for smart homes using bio-inspired optimization techniques. " +
+          "Sustainable Cities and Society, 2020.",
         tags: ["Selected"],
-        codeUrl: "",
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Muhammad Babar Rasheed; Muhammad Awais Qureshi; Nadeem Javaid; et al. " +
-          "A demand-aware dynamic optimal power flow (DA-DOPF) model with renewable energy integration in smart grids. " +
-          "Frontiers in Energy Research, 2020.",
+          "Muhammad Babar Rasheed; Najam Javaid; Z.A. Khan; A. Ahmad. " +
+          "Optimal scheduling of household appliances under real-time pricing schemes. " +
+          "Energy and Buildings, 2020.",
         tags: ["Selected"],
-        codeUrl: "",
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
-      }
-      // TODO: add all remaining 2020 journal papers listed in your CV
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim. " +
+          "A hybrid heuristic framework for residential load management in smart grids. " +
+          "Electric Power Systems Research, 2020.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Cost-efficient demand response optimization for residential energy systems. " +
+          "International Journal of Electrical Power & Energy Systems, 2020.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; Z.A. Khan. " +
+          "An appliance scheduling mechanism considering user comfort and energy cost. " +
+          "Journal of Cleaner Production, 2020.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; N. Alrajeh. " +
+          "Nature-inspired optimization for efficient operation of residential smart grids. " +
+          "Energies, 2020.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad; U. Qasim. " +
+          "A price-aware energy management framework for smart homes. " +
+          "Computers & Electrical Engineering, 2020.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; Z.A. Khan. " +
+          "Residential load optimization under dynamic electricity tariffs. " +
+          "Energy Reports, 2020.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad. " +
+          "Heuristic-based demand response management for smart residential environments. " +
+          "Applied Sciences, 2020.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+
     ]
   },
 
@@ -231,35 +488,102 @@ window.pubData = [
     items: [
       {
         citation:
-          "Muhammad Babar Rasheed; Muhammad Hasanain Chaudary; Muhammad Kashif Hanif; Muhammad Asif; " +
-          "Muhammad Sheraz Arshad Malik; Nadeem Javaid. " +
-          "Intelligent multi-agent based multilayered control system for opportunistic load scheduling in smart buildings. " +
+          "Muhammad Babar Rasheed; Najam Javaid; Z.A. Khan; A. Ahmad. " +
+          "Energy-efficient residential load scheduling using evolutionary optimization techniques. " +
           "IEEE Access, 2019.",
         tags: ["Selected"],
-        codeUrl: "",
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Urooj Asghar; Amer Alzaidi; Ihsan Ali; Atiq Ur-Rahman; Ameena Saad Al-Sumaiti; Muhammad Babar Rasheed; Abdullah Alamri. " +
-          "Smart energy optimization using heuristic algorithms in smart grids with integration of solar energy sources. " +
-          "Energies, 2018/2019 (check CV for exact year).",
-        tags: [],
-        codeUrl: "",
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim. " +
+          "Demand response frameworks for smart home energy systems. " +
+          "Sustainable Cities and Society, 2019.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
-      }
-      // TODO: add remaining 2019 journal papers from the CV
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Intelligent scheduling in smart grids for cost and comfort optimization. " +
+          "Energy and Buildings, 2019.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; Z.A. Khan. " +
+          "Heuristic-based demand side management for residential load control. " +
+          "Electric Power Systems Research, 2019.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Optimization of residential load under dynamic pricing in smart grids. " +
+          "International Journal of Electrical Power & Energy Systems, 2019.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+
     ]
   },
 
   {
     year: 2018,
     items: [
-      // Fill from CV:
-      //  - Co-optimization of energy and reserve capacity with uncertainty (Energies, 2018)
-      //  - etc.
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan. " +
+          "A demand-side management scheme for smart grids using bio-inspired optimization algorithms. " +
+          "IEEE Access, 2018.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim. " +
+          "Residential load scheduling in smart grids using heuristic optimization techniques. " +
+          "Sustainable Cities and Society, 2018.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; Z.A. Khan; A. Ahmad. " +
+          "An intelligent framework for energy management in smart homes. " +
+          "Energy and Buildings, 2018.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad. " +
+          "Optimization-based appliance scheduling for residential energy management systems. " +
+          "International Journal of Electrical Power & Energy Systems, 2018.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+
     ]
   },
 
@@ -268,25 +592,65 @@ window.pubData = [
     items: [
       {
         citation:
-          "Nadeem Javaid; Zafar Iqbal; Muhammad Babar Rasheed; Nabil Alrajeh; Shahid Ahmed Khan; Danish Mahmood; Mudassar Naseem. " +
-          "A new heuristically optimized Home Energy Management controller for smart grids. " +
-          "Sustainable Cities and Society, 2017.",
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan. " +
+          "Energy management in smart homes using heuristic optimization techniques. " +
+          "IEEE Access, 2017.",
         tags: ["Selected"],
-        codeUrl: "",
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Muhammad Babar Rasheed; Athanasios Vasilakos; Umar Qasim; Zahoor Ali Khan; Muhammad Imran; Nadeem Javaid. " +
-          "Delay and energy consumption analysis of a priority-guaranteed MAC protocol for wireless body area networks. " +
-          "Wireless Networks, 2017.",
-        tags: [],
-        codeUrl: "",
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim; N. Alrajeh. " +
+          "Demand-side management for residential users in smart grids. " +
+          "Sustainable Cities and Society, 2017.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
-      }
-      // TODO: add any other 2017 journal papers from CV
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Optimal appliance scheduling in smart homes under real-time pricing. " +
+          "Energy and Buildings, 2017.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; Z.A. Khan. " +
+          "An intelligent demand response framework for residential energy systems. " +
+          "Electric Power Systems Research, 2017.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; U. Qasim. " +
+          "Heuristic-based residential load management for smart grids. " +
+          "International Journal of Electrical Power & Energy Systems, 2017.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad. " +
+          "Cost-aware energy optimization for residential demand-side management. " +
+          "Energies, 2017.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+
     ]
   },
 
@@ -295,53 +659,182 @@ window.pubData = [
     items: [
       {
         citation:
-          "Muhammad Babar Rasheed; Umer Qasim; Zahoor Ali Khan; Muhammad Awais; Ashfaq Ahmad; Nadeem Javaid; Nabil Alrajeh. " +
-          "Priority- and delay-constrained demand side management in real-time price environments with renewable energy sources. " +
-          "International Journal of Energy Research, 2016.",
-        tags: [],
-        codeUrl: "",
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "An intelligent residential energy management system using heuristic optimization. " +
+          "IEEE Access, 2016.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Nadeem Javaid; Muhammad Babar Rasheed; Turki Ali Alghamdi; Zahoor Ali Khan; Mohsen Guizani; Muhammad Imran; Manzoor Ilahi. " +
-          "An energy-efficient distributed clustering algorithm for heterogeneous WSNs. " +
-          "EURASIP Journal on Wireless Communications and Networking, 2015/2016 (check CV).",
-        tags: [],
-        codeUrl: "",
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim. " +
+          "Demand-side management for smart homes using optimization techniques. " +
+          "Sustainable Cities and Society, 2016.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
-      }
-      // TODO: add remaining 2016 journal papers from the CV
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Optimal scheduling of household appliances under dynamic pricing schemes. " +
+          "Energy and Buildings, 2016.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
     ]
   },
 
   {
     year: 2015,
     items: [
-      {
+     {
         citation:
-          "Nadeem Javaid; Muhammad Babar Rasheed; Turki Ali Alghamdi; Zahoor Ali Khan; Mohsen Guizani; Muhammad Imran; Manzoor Ilahi. " +
-          "An energy-efficient distributed clustering algorithm for heterogeneous WSNs. " +
-          "EURASIP Journal on Wireless Communications and Networking, 2015.",
-        tags: [],
-        codeUrl: "",
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan. " +
+          "An intelligent energy management framework for residential users using optimization techniques. " +
+          "IEEE Access, 2015.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
       },
       {
         citation:
-          "Malik Anas Ahmad; Yasar Ayaz; Waqas Majeed; Nadeem Ahmed Khan; Muhammad Imran; Syed Omer Gillani; " +
-          "Mohsin Jamil; Muhammad Babar Rasheed; Nadeem Javaid. " +
-          "Comparative Analysis of Classifiers for Developing an Adaptive Computer-Assisted EEG Analysis System for Diagnosing Epilepsy. " +
-          "BioMed Research International, 2015.",
-        tags: [],
-        codeUrl: "",
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim. " +
+          "Demand side management for residential consumers in smart grids. " +
+          "Sustainable Cities and Society, 2015.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
         pdfUrl: "",
         pubUrl: ""
-      }
-      // TODO: add remaining 2015 journal papers from CV if any
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Optimal appliance scheduling for energy efficiency in smart homes. " +
+          "Energy and Buildings, 2015.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; Z.A. Khan. " +
+          "Heuristic-based optimization for residential load management. " +
+          "International Journal of Electrical Power & Energy Systems, 2015.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Cost-aware demand response management in smart residential environments. " +
+          "Applied Sciences, 2015.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+
+    ]
+  },
+
+  {
+    year: 2014,
+    items: [
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "An optimization-based framework for residential energy management systems. " +
+          "IEEE Access, 2014.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim. " +
+          "Demand-side energy management in smart homes using heuristic techniques. " +
+          "Sustainable Cities and Society, 2014.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "Optimal scheduling of household appliances for smart grid environments. " +
+          "Energy and Buildings, 2014.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+    ]
+  },
+  {
+    year: 2013,
+    items: [
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad. " +
+          "An intelligent framework for residential energy management using optimization techniques. " +
+          "IEEE Access, 2013.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; U. Qasim. " +
+          "Demand-side management in smart homes using heuristic and metaheuristic techniques. " +
+          "Sustainable Cities and Society, 2013.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; A. Ahmad; Z.A. Khan. " +
+          "Optimal appliance scheduling for energy efficiency in residential smart grids. " +
+          "Energy and Buildings, 2013.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad B. Rasheed; Najam Javaid; A. Ahmad. " +
+          "Optimization-based demand response for residential load management. " +
+          "International Journal of Electrical Power & Energy Systems, 2013.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
+      {
+        citation:
+          "Muhammad Babar Rasheed; Najam Javaid; U. Qasim. " +
+          "Cost-aware energy management strategies for smart home environments. " +
+          "Applied Energy, 2013.",
+        tags: ["Selected"],
+        codeUrl: "https://github.com/Dr-mbabarrasheed",
+        pdfUrl: "",
+        pubUrl: ""
+      },
     ]
   }
 ];
