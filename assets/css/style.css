@@ -154,9 +154,9 @@ body.dark .sidebar {
 
 
 .avatar {
-  width: 180px;
-  height: 130px;
-  border-radius: 666px;
+  width: 130px;
+  height: 150px;
+  border-radius: 100px;
   background: var(--chip-bg);
   display: flex;
   align-items: center;
@@ -545,6 +545,103 @@ body.dark .contact-card {
 .sidebar-footer .footer-link:hover {
   text-decoration: underline;
 }
+
+
+
+/* Responsive grid: adapts to screen size */
+.diagram-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+/* Diagram box layout */
+.diagram-box {
+  border-radius: 14px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  padding: 10px 12px;
+}
+
+/* Image container keeps aspect ratio and scales nicely */
+.diagram-img-wrap {
+  margin-top: 8px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: transparent;
+  aspect-ratio: 16 / 9;     /* change to 4/3 if you prefer */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diagram-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;      /* keep entire figure visible */
+  cursor: zoom-in;
+}
+
+/* Smaller screens: slightly smaller columns */
+@media (max-width: 520px) {
+  .diagram-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.86);
+  display: none;
+  z-index: 9999;
+}
+
+.lightbox.open {
+  display: block;
+}
+
+.lightbox-toolbar {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: flex;
+  gap: 8px;
+}
+
+.lightbox-toolbar button {
+  border: 1px solid rgba(255,255,255,0.25);
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border-radius: 10px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.lightbox-stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px 16px 16px; /* top padding to avoid toolbar overlap */
+}
+
+.lightbox-stage img {
+  max-width: 92vw;
+  max-height: 82vh;
+  transform-origin: center center;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.lightbox-stage img:active {
+  cursor: grabbing;
+}
+
 
 
 

@@ -1,11 +1,12 @@
 // assets/js/main.js 
 
 document.addEventListener("DOMContentLoaded", () => {
-  initSidebar("home", siteData);     // sidebar (from sidebar.js)
-  renderNav(siteData.sections);      // top nav in sidebar
-  renderSections(siteData.sections); // main sections
+  initSidebar("home", siteData);
+  renderNav(siteData.sections);
+  renderSections(siteData.sections);
   setupThemeToggle();
   setupIntersectionObserver();
+  setupLightbox(); // ✅ add this
 });
 
 /** Get selected publications from global pubData (from pubs-data.js) */
@@ -310,3 +311,115 @@ function setupIntersectionObserver() {
 
   sections.forEach((sec) => observer.observe(sec));
 }
+
+function setupLightbox() {
+  const lb = document.getElementById("lightbox");
+  const lbImg = document.getElementById("lbImg");
+  const lbStage = document.getElementById("lbStage");
+  const btnClose = document.getElementById("lbClose");
+  const btnIn = document.getElementById("lbZoomIn");
+  const btnOut = document.getElementById("lbZoomOut");
+  const btnReset = document.getElementById("lbReset");
+
+  if (!lb || !lbImg || !lbStage || !btnClose) return;
+
+  let scale = 1;
+  let tx = 0;
+  let ty = 0;
+
+  const clamp = (v, min, max) => Math.max(min, Math.min(max, v));
+
+  function applyTransform() {
+    lbImg.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+  }
+
+  function reset() {
+    scale = 1;
+    tx = 0;
+    ty = 0;
+    applyTransform();
+  }
+
+  function open(src, alt = "") {
+    lbImg.src = src;
+    lbImg.alt = alt;
+    reset();
+    lb.classList.add("open");
+    lb.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function close() {
+    lb.classList.remove("open");
+    lb.setAttribute("aria-hidden", "true");
+    lbImg.src = "";
+    document.body.style.overflow = "";
+  }
+
+  // Click any diagram image to open
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest(".diagram-img-wrap img");
+    if (!img) return;
+    open(img.src, img.alt || "Figure");
+  });
+
+  // Close on background click
+  lb.addEventListener("click", (e) => {
+    if (e.target === lb || e.target === lbStage) close();
+  });
+
+  // Close on ESC
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lb.classList.contains("open")) close();
+  });
+
+  // Buttons
+  btnClose.addEventListener("click", close);
+  btnReset.addEventListener("click", reset);
+
+  btnIn.addEventListener("click", () => {
+    scale = clamp(scale + 0.2, 1, 6);
+    applyTransform();
+  });
+
+  btnOut.addEventListener("click", () => {
+    scale = clamp(scale - 0.2, 1, 6);
+    applyTransform();
+  });
+
+  // Zoom with mouse wheel
+  lbStage.addEventListener("wheel", (e) => {
+    if (!lb.classList.contains("open")) return;
+    e.preventDefault();
+    const delta = e.deltaY > 0 ? -0.15 : 0.15;
+    scale = clamp(scale + delta, 1, 6);
+    applyTransform();
+  }, { passive: false });
+
+  // Drag to pan
+  let dragging = false;
+  let lastX = 0;
+  let lastY = 0;
+
+  lbImg.addEventListener("mousedown", (e) => {
+    if (!lb.classList.contains("open")) return;
+    dragging = true;
+    lastX = e.clientX;
+    lastY = e.clientY;
+  });
+
+  document.addEventListener("mousemove", (e) => {
+    if (!dragging) return;
+    tx += (e.clientX - lastX);
+    ty += (e.clientY - lastY);
+    lastX = e.clientX;
+    lastY = e.clientY;
+    applyTransform();
+  });
+
+  document.addEventListener("mouseup", () => {
+    dragging = false;
+  });
+}
+
+

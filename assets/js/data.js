@@ -82,9 +82,9 @@ profiles: [
       ],
       metrics: [
         "62+ peer-reviewed publications",
-        "h-index: 26",
-        "i10-index: 45",
-        "~2200+ citations",
+        "h-index: 27",
+        "i10-index: 50",
+        "~2475+ citations",
         "UK Global Talent Visa",
         "Marie Curie COFUND Fellow"
       ]
@@ -230,9 +230,14 @@ profiles: [
       img: "assets/img/EnergyReports.png"
     },
     {
-      heading: "AI & Optimisation",
-      text: "Meta-heuristics, deep learning and multi-agent systems for scheduling, forecasting, and decision support.",
-      img: null // e.g. "assets/img/diagram-ai.svg"
+      heading: " Wireless Sensor Networks",
+      text: "High-level view of my work on Wireless Sensor Networks.",
+      img: "assets/img/WSN.png"
+    },
+    {
+      heading: "Teaching & Supervision",
+      text: "Modules, supervision and student projects across energy systems, optimisation, and machine learning.",
+      img: null // e.g. "assets/img/diagram-teaching.svg"
     },
     {
       heading: "Teaching & Supervision",
